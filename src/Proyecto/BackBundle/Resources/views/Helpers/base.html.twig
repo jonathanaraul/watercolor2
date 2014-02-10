@@ -10,8 +10,9 @@
 		<!--basic styles-->
 
 		<link href="{{asset('back/css/bootstrap.min.css')}}" rel="stylesheet" />
-		<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		            
+		<link href="{{asset('back/css/bootstrap-responsive.min.css')}}" rel="stylesheet" />
+		<link rel="stylesheet" href="{{asset('back/css/font-awesome.min.css')}}" />
 
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
@@ -25,9 +26,12 @@
 
 		<!--ace styles-->
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+
+
+		<link rel="stylesheet" href="{{asset('back/css/ace.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('back/css/ace-responsive.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('back/css/ace-skins.min.css')}}" />
 
 		<!--[if lte IE 8]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -1788,7 +1792,8 @@
 		<!--[if !IE]>-->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			
+			window.jQuery || document.write("<script src='{{asset('js/jquery-2.0.3.min.js')}}'>"+"<"+"/script>");
 		</script>
 
 		<!--<![endif]-->
@@ -1802,7 +1807,9 @@
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		
+		
+		<script src="{{asset('back/js/bootstrap.min.js')}}"></script>
 
 		<!--page specific plugin scripts-->
 
@@ -1810,19 +1817,24 @@
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="{{asset('js/jquery-ui-1.10.3.custom.min.js')}}"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
-		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
+		<script src="{{asset('back/js/jquery-ui-1.10.3.custom.min.js')}}"></script>
+		<script src="{{asset('back/js/jquery.ui.touch-punch.min.js')}}"></script>
+		<script src="{{asset('back/js/jquery.slimscroll.min.js')}}"></script>
+		<script src="{{asset('back/js/jquery.easy-pie-chart.min.js')}}"></script>
+		<script src="{{asset('back/js/jquery.sparkline.min.js')}}"></script>
+		<script src="{{asset('back/js/flot/jquery.flot.min.js')}}"></script>
+		<script src="{{asset('back/js/flot/jquery.flot.pie.min.js')}}"></script>
+		<script src="{{asset('back/js/flot/jquery.flot.resize.min.js')}}"></script>
+
+
+
+
 
 		<!--ace scripts-->
+		
 
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
+		<script src="{{asset('back/js/ace-elements.min.js')}}"></script>
+		<script src="{{asset('back/js/ace.min.js')}}"></script>
 
 		<!--inline scripts related to this page-->
 
