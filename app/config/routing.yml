@@ -1,0 +1,8 @@
+proyecto_back:
+    resource: "@ProyectoBackBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+proyecto_front:
+    resource: "@ProyectoFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
