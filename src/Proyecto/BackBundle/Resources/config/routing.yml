@@ -1,3 +1,41 @@
 proyecto_back_homepage:
     pattern:  /
     defaults: { _controller: ProyectoBackBundle:Default:index }
+
+proyecto_back_page_list:
+    pattern:  /{_locale}/page/list
+    defaults: { _controller: ProyectoBackBundle:Page:list }
+    requirements:
+        _locale:  es|en
+proyecto_back_page_new:
+    pattern:  /{_locale}/page/new
+    defaults: { _controller: ProyectoBackBundle:Page:new }
+    requirements:
+        _locale:  es|en
+proyecto_back_page_edit:
+    pattern:  /{_locale}/page/edit/{id}
+    defaults: { _controller: ProyectoBackBundle:Page:edit, id: '1' }
+    requirements:
+        _locale:  es|en
+proyecto_back_page_rank:
+    pattern:  /{_locale}/page/rank
+    defaults: { _controller: ProyectoBackBundle:Page:rank }
+    requirements:
+        _locale:  es|en
+proyecto_back_page_status_post:
+    pattern:  /{_locale}/page/status
+    defaults: { _controller: ProyectoBackBundle:Page:statusPost }
+    requirements:
+      _method: POST
+      _locale:  es|en
+proyecto_back_page_rank_post:
+    pattern:  /{_locale}/page/rank/post
+    defaults: { _controller: ProyectoBackBundle:Page:rankPost }
+    requirements:
+        _locale:  es|en
+proyecto_back_page_remove_post:
+    pattern:  /{_locale}/page/remove
+    defaults: { _controller: ProyectoBackBundle:Page:remove }
+    requirements:
+      _method: POST
+      _locale:  es|en
