@@ -1,7 +1,7 @@
 <?php
 
 // src/Acme/UserBundle/Entity/UserRepository.php
-namespace Proyecto\PrincipalBundle\Entity;
+namespace Proyecto\BackBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;

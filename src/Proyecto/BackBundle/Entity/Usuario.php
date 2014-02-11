@@ -1,6 +1,6 @@
 <?php
 
-namespace Proyecto\PrincipalBundle\Entity;
+namespace Proyecto\BackBundle\Entity;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
@@ -42,6 +42,18 @@ class Usuario implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;
+
+    /**
+     * @var \Resource
+     *
+     * @ORM\ManyToOne(targetEntity="CmsResource")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
+     * })
+     */
+
+    private $resource;
+
 
     public function __construct()
     {
@@ -184,5 +196,29 @@ class Usuario implements UserInterface, \Serializable
             $this->id,
         ) = unserialize($serialized);
     }
+
+    /**
+     * Set resource
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
+     * @return Deportes
+     */
+    public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
+    {
+        $this->resource = $resource;
+    
+        return $this;
+    }
+
+    /**
+     * Get resource
+     *
+     * @return \Proyecto\BackBundle\Entity\CmsResource 
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
 
 }

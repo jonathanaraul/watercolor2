@@ -1,6 +1,6 @@
 <?php
 
-namespace Proyecto\PrincipalBundle\Entity;
+namespace Proyecto\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
