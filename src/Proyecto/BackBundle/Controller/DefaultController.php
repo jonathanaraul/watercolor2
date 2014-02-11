@@ -9,6 +9,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
     	$name = '';
-        return $this->render('ProyectoBackBundle:Helpers:base.html.twig', array('name' => $name));
+        return $this->render('ProyectoBackBundle:Content:index.html.twig', array('name' => $name));
     }
 }
