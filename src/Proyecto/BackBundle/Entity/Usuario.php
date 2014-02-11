@@ -1,6 +1,6 @@
 <?php
 
-namespace Proyecto\PrincipalBundle\Entity;
+namespace Proyecto\BackBundle\Entity;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
@@ -42,6 +42,18 @@ class Usuario implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;
+
+    /**
+     * @var \Cmsresource
+     *
+     * @ORM\ManyToOne(targetEntity="CmsResource")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Cmsresource", referencedColumnName="id")
+     * })
+     */
+
+    private $cmsresource;
+
 
     public function __construct()
     {
@@ -184,5 +196,55 @@ class Usuario implements UserInterface, \Serializable
             $this->id,
         ) = unserialize($serialized);
     }
+
+    /**
+     * Set cmsresource
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
+     * @return Deportes
+     */
+    public function setCmsresource(\Proyecto\BackBundle\Entity\CmsResource $cmsresource = null)
+    {
+        $this->cmsresource = $cmsresource;
+    
+        return $this;
+    }
+
+    /**
+     * Get cmsresource
+     *
+     * @return \Proyecto\BackBundle\Entity\CmsResource 
+     */
+    public function getCmsresource()
+    {
+        return $this->cmsresource;
+    }
+
+/////////////////////////////////////////////////////////////////////
+
+        /**
+     * Set cancha
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
+     * @return Deportes
+     */
+    public function setCancha(\Proyecto\PrincipalBundle\Entity\Cancha $cancha = null)
+    {
+        $this->cancha = $cancha;
+    
+        return $this;
+    }
+
+    /**
+     * Get cancha
+     *
+     * @return \Proyecto\PrincipalBundle\Entity\Cancha 
+     */
+    public function getCancha()
+    {
+        return $this->cancha;
+    }
+////////////////////////////////////////////////////////////////////
+
 
 }
