@@ -85,9 +85,12 @@ class CmsLink
     private $dateUpdated;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 
@@ -98,7 +101,6 @@ class CmsLink
      */
     private $lang;
 	
-
     /**
      * Get id
      *
@@ -322,7 +324,14 @@ class CmsLink
      * @param integer $user
      * @return CmsLink
      */
-    public function setUser($user)
+
+    /**
+     * Set user
+     *
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
+     * @return CmsLink
+     */
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -332,7 +341,7 @@ class CmsLink
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {

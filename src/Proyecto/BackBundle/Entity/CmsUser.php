@@ -8,13 +8,13 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**
- * Proyecto\PrincipalBundle\Entity\Usuario
+ * Proyecto\PrincipalBundle\Entity\CmsUser
  *
- * @ORM\Table(name="usuario")
- * @ORM\Entity(repositoryClass="Proyecto\PrincipalBundle\Entity\UsuarioRepository")
+ * @ORM\Table(name="CmsUser")
+ * @ORM\Entity(repositoryClass="Proyecto\PrincipalBundle\Entity\CmsUserRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class Usuario implements UserInterface, \Serializable
+class CmsUser implements UserInterface, \Serializable
 {
     /**
      * @ORM\Column(type="integer")
@@ -51,8 +51,18 @@ class Usuario implements UserInterface, \Serializable
      *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
      * })
      */
-
     private $resource;
+
+     /**
+     * @var \Article
+     *
+     * @ORM\ManyToOne(targetEntity="CmsArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
+     * })
+     */
+    private $article;
+
 
 
     public function __construct()
@@ -75,7 +85,7 @@ class Usuario implements UserInterface, \Serializable
      * Set username
      *
      * @param string $username
-     * @return Usuario
+     * @return CmsUser
      */
     public function setUsername($username)
     {
@@ -98,7 +108,7 @@ class Usuario implements UserInterface, \Serializable
      * Set salt
      *
      * @param string $salt
-     * @return Usuario
+     * @return CmsUser
      */
     public function setSalt($salt)
     {
@@ -121,7 +131,7 @@ class Usuario implements UserInterface, \Serializable
      * Set password
      *
      * @param string $password
-     * @return Usuario
+     * @return CmsUser
      */
     public function setPassword($password)
     {
@@ -144,7 +154,7 @@ class Usuario implements UserInterface, \Serializable
      * Set email
      *
      * @param string $email
-     * @return Usuario
+     * @return CmsUser
      */
     public function setEmail($email)
     {
@@ -200,7 +210,7 @@ class Usuario implements UserInterface, \Serializable
     /**
      * Set resource
      *
-     * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
+     * @param \Proyecto\PrincipalBundle\Entity\CmsResource $resource
      * @return Deportes
      */
     public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
@@ -220,5 +230,26 @@ class Usuario implements UserInterface, \Serializable
         return $this->resource;
     }
 
+    /**
+     * Set article
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\CmsArticle $article
+     * @return Deportes
+     */
+    public function setArticle(\Proyecto\BackBundle\Entity\CmsResource $article = null)
+    {
+        $this->article = $article;
+    
+        return $this;
+    }
 
+    /**
+     * Get article
+     *
+     * @return \Proyecto\BackBundle\Entity\CmsArticle 
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
 }

@@ -22,10 +22,13 @@ class CmsPage
      */
     private $id;
 
-    /**
-     * @var integer
+     /**
+     * @var \Resource
      *
-     * @ORM\Column(name="resource", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsResource")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
+     * })
      */
     private $resource;
 
@@ -135,9 +138,12 @@ class CmsPage
     private $dateUpdated;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 	
@@ -163,10 +169,10 @@ class CmsPage
     /**
      * Set resource
      *
-     * @param integer $resource
+     * @param \Proyecto\BackBundle\Entity\CmsResource $resource
      * @return CmsPage
      */
-    public function setResource($resource)
+    public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
     {
         $this->resource = $resource;
     
@@ -176,7 +182,7 @@ class CmsPage
     /**
      * Get resource
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsResource 
      */
     public function getResource()
     {
@@ -539,10 +545,10 @@ class CmsPage
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
      * @return CmsPage
      */
-    public function setUser($user)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -552,7 +558,7 @@ class CmsPage
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {

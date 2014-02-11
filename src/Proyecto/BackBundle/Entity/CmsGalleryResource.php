@@ -23,16 +23,22 @@ class CmsGalleryResource
     private $id;
 
     /**
-     * @var integer
+     * @var \Gallery
      *
-     * @ORM\Column(name="gallery", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsGallery")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Gallery", referencedColumnName="id")
+     * 
      */
-	private $gallery;
+    private $gallery;
 
     /**
-     * @var integer
+     * @var \Resource
      *
-     * @ORM\Column(name="resource", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsResource")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
+     * })
      */
     private $resource;
 
@@ -51,9 +57,12 @@ class CmsGalleryResource
     private $ip;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 	
@@ -70,10 +79,10 @@ class CmsGalleryResource
     /**
      * Set gallery
      *
-     * @param integer $gallery
+     * @param \Proyecto\BackBundle\Entity\CmsGallery $gallery
      * @return CmsGalleryResource
      */
-    public function setGallery($gallery)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsGallery $gallery = null)
     {
         $this->gallery = $gallery;
     
@@ -83,20 +92,20 @@ class CmsGalleryResource
     /**
      * Get gallery
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsGallery
      */
     public function getGallery()
     {
         return $this->gallery;
-    }
+    }   
 
     /**
      * Set resource
      *
-     * @param integer $resource
+     * @param \Proyecto\BackBundle\Entity\CmsResource $resource
      * @return CmsGalleryResource
      */
-    public function setResource($resource)
+    public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
     {
         $this->resource = $resource;
     
@@ -106,7 +115,7 @@ class CmsGalleryResource
     /**
      * Get resource
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsResource 
      */
     public function getResource()
     {
@@ -162,10 +171,10 @@ class CmsGalleryResource
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
      * @return CmsGalleryResource
      */
-    public function setUser($user)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -175,7 +184,7 @@ class CmsGalleryResource
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {

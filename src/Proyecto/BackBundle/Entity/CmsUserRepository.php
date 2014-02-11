@@ -11,7 +11,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Mapping as ORM;
 
-class UsuarioRepository extends EntityRepository implements UserProviderInterface
+class CmsUserRepository extends EntityRepository implements UserProviderInterface
 {
     public function loadUserByUsername($username)
     {
