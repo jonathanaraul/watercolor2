@@ -262,7 +262,7 @@ class CmsArticle
     /**
      * Set resource
      *
-     * @param \Proyecto\PrincipalBundle\Entity\CmsResource $resource
+     * @param \Proyecto\BackBundle\Entity\CmsResource $resource
      * @return CmsArticle
      */
     public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
@@ -285,7 +285,7 @@ class CmsArticle
     /**
      * Set user
      *
-     * @param \Proyecto\PrincipalBundle\Entity\User $user
+     * @param \Proyecto\BackBundle\Entity\User $user
      * @return CmsArticle
      */
     public function setUser(\Proyecto\BackBundle\Entity\User $user = null)
