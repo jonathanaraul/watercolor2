@@ -100,17 +100,24 @@ class CmsArticle
     private $dateUpdated;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 	
     /**
-     * @var string
+     * @var \Resource
      *
-     * @ORM\Column(name="resource", type="string", nullable=true)
+     * @ORM\ManyToOne(targetEntity="CmsResource")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
+     * })
      */
+
     private $resource;
 
     /**
@@ -127,7 +134,6 @@ class CmsArticle
      */
     private $lang;
 	
-
     /**
      * Get id
      *
@@ -256,10 +262,10 @@ class CmsArticle
     /**
      * Set resource
      *
-     * @param string $resource
+     * @param \Proyecto\PrincipalBundle\Entity\CmsResource $resource
      * @return CmsArticle
      */
-    public function setResource($resource)
+    public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
     {
         $this->resource = $resource;
     
@@ -269,13 +275,35 @@ class CmsArticle
     /**
      * Get resource
      *
-     * @return string 
+     * @return \Proyecto\BackBundle\Entity\CmsResource 
      */
     public function getResource()
     {
         return $this->resource;
     }
 
+    /**
+     * Set user
+     *
+     * @param \Proyecto\PrincipalBundle\Entity\User $user
+     * @return CmsArticle
+     */
+    public function setUser(\Proyecto\BackBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Proyecto\BackBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
     /**
      * Set keywords
      *
@@ -325,10 +353,10 @@ class CmsArticle
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
      * @return CmsArticle
      */
-    public function setUser($user)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -338,13 +366,13 @@ class CmsArticle
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {
         return $this->user;
     }
-
+    
     /**
      * Set ip
      *

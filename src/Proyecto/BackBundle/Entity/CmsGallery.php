@@ -30,9 +30,12 @@ class CmsGallery
     private $page;
 	
     /**
-     * @var integer
+     * @var \Article
      *
-     * @ORM\Column(name="article", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="CmsArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Article", referencedColumnName="id")
+     * 
      */
     private $article;
 	
@@ -159,14 +162,14 @@ class CmsGallery
     {
         return $this->page;
     }
-
+    
     /**
      * Set article
      *
-     * @param integer $article
+     * @param \Proyecto\BackBundle\Entity\CmsArticle $article
      * @return CmsGallery
      */
-    public function setArticle($article)
+    public function setArticle(\Proyecto\BackBundle\Entity\CmsArticle $article = null)
     {
         $this->article = $article;
     
@@ -176,12 +179,12 @@ class CmsGallery
     /**
      * Get article
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsArticle
      */
     public function getArticle()
     {
         return $this->article;
-    }
+    }    
 	
     /**
      * Set name

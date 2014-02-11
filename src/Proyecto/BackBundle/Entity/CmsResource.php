@@ -53,6 +53,7 @@ class CmsResource
      * @ORM\Column(name="published", type="boolean", nullable=false)
      */
     private $published;
+    
     /**
      * @var boolean
      *
@@ -68,9 +69,12 @@ class CmsResource
     private $type;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 
@@ -260,10 +264,10 @@ class CmsResource
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
      * @return CmsResource
      */
-    public function setUser($user)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -273,7 +277,7 @@ class CmsResource
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {

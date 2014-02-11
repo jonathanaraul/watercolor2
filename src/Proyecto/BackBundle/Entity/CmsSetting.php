@@ -64,9 +64,12 @@ class CmsSetting
     private $dateUpdated;
 
     /**
-     * @var integer
+     * @var \User
      *
-     * @ORM\Column(name="user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="CmsUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="User", referencedColumnName="id")
+     * 
      */
     private $user;
 
@@ -229,10 +232,10 @@ class CmsSetting
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \Proyecto\BackBundle\Entity\CmsUser $user
      * @return CmsSetting
      */
-    public function setUser($user)
+    public function setUser(\Proyecto\BackBundle\Entity\CmsUser $user = null)
     {
         $this->user = $user;
     
@@ -242,7 +245,7 @@ class CmsSetting
     /**
      * Get user
      *
-     * @return integer 
+     * @return \Proyecto\BackBundle\Entity\CmsUser
      */
     public function getUser()
     {
