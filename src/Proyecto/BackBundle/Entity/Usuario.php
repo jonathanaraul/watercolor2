@@ -44,15 +44,15 @@ class Usuario implements UserInterface, \Serializable
     private $email;
 
     /**
-     * @var \Cmsresource
+     * @var \Resource
      *
      * @ORM\ManyToOne(targetEntity="CmsResource")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Cmsresource", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="Resource", referencedColumnName="id")
      * })
      */
 
-    private $cmsresource;
+    private $resource;
 
 
     public function __construct()
@@ -198,26 +198,26 @@ class Usuario implements UserInterface, \Serializable
     }
 
     /**
-     * Set cmsresource
+     * Set resource
      *
      * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
      * @return Deportes
      */
-    public function setCmsresource(\Proyecto\BackBundle\Entity\CmsResource $cmsresource = null)
+    public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
     {
-        $this->cmsresource = $cmsresource;
+        $this->resource = $resource;
     
         return $this;
     }
 
     /**
-     * Get cmsresource
+     * Get resource
      *
      * @return \Proyecto\BackBundle\Entity\CmsResource 
      */
-    public function getCmsresource()
+    public function getResource()
     {
-        return $this->cmsresource;
+        return $this->resource;
     }
 
 
