@@ -220,31 +220,5 @@ class Usuario implements UserInterface, \Serializable
         return $this->cmsresource;
     }
 
-/////////////////////////////////////////////////////////////////////
-
-        /**
-     * Set cancha
-     *
-     * @param \Proyecto\PrincipalBundle\Entity\Cancha $cancha
-     * @return Deportes
-     */
-    public function setCancha(\Proyecto\PrincipalBundle\Entity\Cancha $cancha = null)
-    {
-        $this->cancha = $cancha;
-    
-        return $this;
-    }
-
-    /**
-     * Get cancha
-     *
-     * @return \Proyecto\PrincipalBundle\Entity\Cancha 
-     */
-    public function getCancha()
-    {
-        return $this->cancha;
-    }
-////////////////////////////////////////////////////////////////////
-
 
 }
