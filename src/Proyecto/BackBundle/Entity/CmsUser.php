@@ -8,10 +8,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**
- * Proyecto\PrincipalBundle\Entity\CmsUser
+ * Proyecto\BackBundle\Entity\CmsUser
  *
  * @ORM\Table(name="CmsUser")
- * @ORM\Entity(repositoryClass="Proyecto\PrincipalBundle\Entity\CmsUserRepository")
+ * @ORM\Entity(repositoryClass="Proyecto\BackBundle\Entity\CmsUserRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class CmsUser implements UserInterface, \Serializable
@@ -210,7 +210,7 @@ class CmsUser implements UserInterface, \Serializable
     /**
      * Set resource
      *
-     * @param \Proyecto\PrincipalBundle\Entity\CmsResource $resource
+     * @param \Proyecto\BackBundle\Entity\CmsResource $resource
      * @return Deportes
      */
     public function setResource(\Proyecto\BackBundle\Entity\CmsResource $resource = null)
@@ -233,7 +233,7 @@ class CmsUser implements UserInterface, \Serializable
     /**
      * Set article
      *
-     * @param \Proyecto\PrincipalBundle\Entity\CmsArticle $article
+     * @param \Proyecto\BackBundle\Entity\CmsArticle $article
      * @return Deportes
      */
     public function setArticle(\Proyecto\BackBundle\Entity\CmsResource $article = null)
