@@ -8,27 +8,28 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityRepository;
 
 
-class PageController extends Controller
+class LinkController extends Controller
 {
     public function listAction(Request $request)
     {
     	$name = '';
-        return $this->render('ProyectoBackBundle:Page:list.html.twig', array('name' => $name));
+        return $this->render('ProyectoBackBundle:Link:list.html.twig', array('name' => $name));
     }
     public function newAction(Request $request)
     {
     	$name = '';
-        return $this->render('ProyectoBackBundle:Page:new.html.twig', array('name' => $name));
+        return $this->render('ProyectoBackBundle:Link:new.html.twig', array('name' => $name));
+        
     }
     public function editAction($id, Request $request)
     {
     	$name = '';
-        return $this->render('ProyectoBackBundle:Page:edit.html.twig', array('name' => $name));
+        return $this->render('ProyectoBackBundle:Link:edit.html.twig', array('name' => $name));
     }
     public function rankAction()
     {
     	$name = '';
-        return $this->render('ProyectoBackBundle:Page:rank.html.twig', array('name' => $name));
+        return $this->render('ProyectoBackBundle:Link:rank.html.twig', array('name' => $name));
     }
     public function statusPostAction()
     {
@@ -39,7 +40,7 @@ class PageController extends Controller
 		/*
 		$id = $post -> get("id");
 		$em = $this -> getDoctrine() -> getManager();
-		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsPage') -> find($id);
+		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsLink') -> find($id);
 		$em -> remove($object);
 		$em -> flush();
 		*/
@@ -58,7 +59,7 @@ class PageController extends Controller
 		/*
 		$id = $post -> get("id");
 		$em = $this -> getDoctrine() -> getManager();
-		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsPage') -> find($id);
+		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsLink') -> find($id);
 		$em -> remove($object);
 		$em -> flush();
 		*/
@@ -77,7 +78,7 @@ class PageController extends Controller
 		/*
 		$id = $post -> get("id");
 		$em = $this -> getDoctrine() -> getManager();
-		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsPage') -> find($id);
+		$object = $em -> getRepository('ProyectoPrincipalBundle:CmsLink') -> find($id);
 		$em -> remove($object);
 		$em -> flush();
 		*/
