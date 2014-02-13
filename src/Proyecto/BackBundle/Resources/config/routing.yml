@@ -39,7 +39,43 @@ proyecto_back_page_remove_post:
     requirements:
       _method: POST
       _locale:  es|en
-
+proyecto_back_configuration_list:
+    pattern:  /{_locale}/page/list
+    defaults: { _controller: ProyectoBackBundle:Configuration:list }
+    requirements:
+        _locale:  es|en
+proyecto_back_configuration_new:
+    pattern:  /{_locale}/configuration/new
+    defaults: { _controller: ProyectoBackBundle:Configuration:new }
+    requirements:
+        _locale:  es|en
+proyecto_back_configuration_edit:
+    pattern:  /{_locale}/configuration/edit/{id}
+    defaults: { _controller: ProyectoBackBundle:Configuration:edit, id: '1' }
+    requirements:
+        _locale:  es|en
+proyecto_back_configuration_rank:
+    pattern:  /{_locale}/configuration/rank
+    defaults: { _controller: ProyectoBackBundle:Configuration:rank }
+    requirements:
+        _locale:  es|en
+proyecto_back_configuration_status_post:
+    pattern:  /{_locale}/configuration/status
+    defaults: { _controller: ProyectoBackBundle:Configuration:statusPost }
+    requirements:
+      _method: POST
+      _locale:  es|en
+proyecto_back_configuration_rank_post:
+    pattern:  /{_locale}/configuration/rank/post
+    defaults: { _controller: ProyectoBackBundle:Configuration:rankPost }
+    requirements:
+        _locale:  es|en
+proyecto_back_configuration_remove_post:
+    pattern:  /{_locale}/configuration/remove
+    defaults: { _controller: ProyectoBackBundle:Configuration:remove }
+    requirements:
+      _method: POST
+      _locale:  es|en
 proyecto_back_link_list:
     pattern:  /{_locale}/link/list
     defaults: { _controller: ProyectoBackBundle:Link:list }
