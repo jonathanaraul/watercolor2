@@ -85,6 +85,6 @@ class LinkController extends Controller
 		
 		$respuesta = new response(json_encode(array('estado' => $estado)));
 		$respuesta -> headers -> set('content_type', 'aplication/json');
-		return $respuesta;
+		return $respuesta; 
     }
 }
