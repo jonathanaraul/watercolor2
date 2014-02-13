@@ -39,3 +39,41 @@ proyecto_back_page_remove_post:
     requirements:
       _method: POST
       _locale:  es|en
+
+proyecto_back_link_list:
+    pattern:  /{_locale}/link/list
+    defaults: { _controller: ProyectoBackBundle:Link:list }
+    requirements:
+        _locale:  es|en
+proyecto_back_link_new:
+    pattern:  /{_locale}/link/new
+    defaults: { _controller: ProyectoBackBundle:Link:new }
+    requirements:
+        _locale:  es|en
+proyecto_back_link_edit:
+    pattern:  /{_locale}/link/edit/{id}
+    defaults: { _controller: ProyectoBackBundle:Link:edit, id: '1' }
+    requirements:
+        _locale:  es|en
+proyecto_back_link_rank:
+    pattern:  /{_locale}/link/rank
+    defaults: { _controller: ProyectoBackBundle:Link:rank }
+    requirements:
+        _locale:  es|en
+proyecto_back_link_status_post:
+    pattern:  /{_locale}/link/status
+    defaults: { _controller: ProyectoBackBundle:Link:statusPost }
+    requirements:
+      _method: POST
+      _locale:  es|en
+proyecto_back_link_rank_post:
+    pattern:  /{_locale}/link/rank/post
+    defaults: { _controller: ProyectoBackBundle:Link:rankPost }
+    requirements:
+        _locale:  es|en
+proyecto_back_link_remove_post:
+    pattern:  /{_locale}/link/remove
+    defaults: { _controller: ProyectoBackBundle:Link:remove }
+    requirements:
+      _method: POST
+      _locale:  es|en
