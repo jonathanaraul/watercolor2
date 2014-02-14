@@ -2,6 +2,7 @@ proyecto_back_homepage:
     pattern:  /
     defaults: { _controller: ProyectoBackBundle:Default:index }
 
+
 proyecto_back_page_list:
     pattern:  /{_locale}/page/list
     defaults: { _controller: ProyectoBackBundle:Page:list }
@@ -44,6 +45,7 @@ proyecto_back_configuration_list:
     defaults: { _controller: ProyectoBackBundle:Configuration:list }
     requirements:
         _locale:  es|en
+
 proyecto_back_configuration_new:
     pattern:  /{_locale}/configuration/new
     defaults: { _controller: ProyectoBackBundle:Configuration:new }
